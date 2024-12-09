@@ -4,17 +4,17 @@ import { useState } from "react"
 
 
 function App() {
-    const[todos,setTodos]=useState([
-    'go to shopping mall',
-    'call mom',
-    'read a book',
-    'water plants'
-  ])
+  const[todos,setTodos]=useState([])
+
+  function handleAddTodos(newTodo){
+    const newTodoList=[...todos,newTodo]
+    setTodos(newTodoList)
+  }
 
   return (
     // this is called a react "fragment"
     <> 
-      <TodoInput />
+      <TodoInput handleAddTodos={handleAddTodos}/>
       <TodoList todos={todos}/>
     </>
   )
