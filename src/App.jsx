@@ -1,14 +1,15 @@
 import TodoList from "./components/TodoList"
 import TodoInput from "./components/TodoInput"
+import { useState } from "react"
 
 
 function App() {
-  let todos=[
+    const[todos,setTodos]=useState([
     'go to shopping mall',
     'call mom',
     'read a book',
     'water plants'
-  ]
+  ])
 
   return (
     // this is called a react "fragment"
